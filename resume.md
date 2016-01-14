@@ -810,7 +810,7 @@ Tree-Delete(T, z)
 
 ### Graphs
 
-kkkkkkk $G = (E, V)$ consists of :
+A graph $G = (E, V)$ consists of :
 
 - a vertex set $V$
 - an edge set $E$ that contain (ordered) pairs of vertices

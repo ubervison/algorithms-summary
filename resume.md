@@ -306,6 +306,7 @@ f(v, u) & \text{if } (v, u) \in E \\
 $G_f = (V, E_f)$ where $E_f = \{(u, v) \in V \times V: c_f(u, v) > 0\}$
 
 ![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/residual_network.png)
+\ 
 
 ### Running time
 
@@ -1580,4 +1581,13 @@ Simple but powerful technique for computing the expected value. In particular, i
 
 **Definition : ** Given a sample space and an event $A$, we define the *indicator random variable*
 
-$$I\{A\}$$
+$$I\{A\} = \begin{cases}
+1 & \text{if A occurs}\\
+0 & \text{if A does not occur}
+\end{cases}$$
+
+**Lemma : ** For an event $A$, let $X_A = I\{A\}$. Then $E[X_A]=Pr[A]$
+
+**Linearity of expectation : ** $E[aX + bY] = aE[X] + bE[Y]$
+
+

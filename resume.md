@@ -810,7 +810,7 @@ Tree-Delete(T, z)
 
 ### Graphs
 
-A graph $G = (E, V)$ consists of :
+kkkkkkk $G = (E, V)$ consists of :
 
 - a vertex set $V$
 - an edge set $E$ that contain (ordered) pairs of vertices
@@ -949,7 +949,7 @@ DFS forms a *depth-first forest* comprised of > 1 *depth-first trees*. Each tree
 For all *u, v*, exactly one of the following holds:
 
 1. *u.d < u.f < v.d < v.f* or *v.d < v.f < u.d < u.f* and neither of *u* and *v* are descendant of each other.
-2. *u.d < v.d < v.f < u.f* and *u* is a descendant of *v*.
+2. *u.d < v.d < v.f < u.f* and *v* is a descendant of *u*.
 3. *v.d < u.d < u.f < v.f* and *u* is a descendant of *v*.
 
 **White-path theorem**

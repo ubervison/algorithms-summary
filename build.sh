@@ -1,1 +1,1 @@
-pandoc --latex-engine=xelatex --toc -V geometry:margin=1in -o resume.pdf resume.md
+pandoc --latex-engine=xelatex --highlight-style=tango --toc -V geometry:margin=1in -o resume.pdf resume.md

@@ -271,9 +271,9 @@ $T(n) = \begin{cases}
 7T(n/2) + \Theta(n^2) & \text{if } n > 1
 \end{cases} \Longrightarrow T(n) = \Theta(n^{\log_2 7})$
 
-## Maximum-flow problem
+# Maximum-flow problem
 
-### The Ford-Fulkerson method
+## The Ford-Fulkerson method
 
 **Basic idea : **
 
@@ -289,7 +289,7 @@ Ford-Fulkerson-Method(G, s, t)
 ```
 augmenting path = simple path from $s$ to $t$
 
-#### Residual network
+### Residual network
 
 Given a flow $f$ and a network $G=(V, E)$, the residual network consists of edges with capacities that represent how we can change the flow on those edges.
 
@@ -307,7 +307,7 @@ $G_f = (V, E_f)$ where $E_f = \{(u, v) \in V \times V: c_f(u, v) > 0\}$
 
 ![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/residual_network.png)
 
-#### Running time
+### Running time
 
 If capacities are irrational then the Ford-Fulkerson method might not terminate. If we take the *shortest path* or the *fattest path* then this will not happen if the capacities are integers.
 
@@ -1553,3 +1553,31 @@ Dijkstra(G, w, s)
 - If binary heap, each operation takes $O(\log V)$ time $\Rightarrow O(E\log V)$
 - More careful implementation time is $O(V\log V + E)$
 
+# Probabilistic analysis and randomized algorithms
+
+**Motivation: **
+
+Worst case does not usually happen
+
+- Average case analysis
+- Amortized analysis
+
+Randomization helps avoid worst-case and attacks by evil users
+
+- Choosing the pivot in quick-sort at random
+
+Randomization necessary in cryptography
+
+Can we get randomness?
+
+- How to extract randomness (extractors)
+- Longer "random behaving" strings from small seed (pseudorandom genrators)
+
+
+## Indicator Random Variable
+
+Simple but powerful technique for computing the expected value. In particular, in situations in which there may be dependence
+
+**Definition : ** Given a sample space and an event $A$, we define the *indicator random variable*
+
+$$I\{A\}$$

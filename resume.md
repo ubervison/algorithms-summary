@@ -103,6 +103,67 @@ Topological-Sort(G)
 ```
 **Running time : ** $Theta(V + E)$ (same as DFS)
 
+## Quick sort
+
+- The sorting algorithm of choice in many computer systems
+- Easy to implement
+- Fast in practice
+- Divide-and-conquer paradigm
+
+To sort the subarray $A[p...r]$:
+
+**Divide: ** Partition $A[p...r]$ into two (possibly empty subarrays $A[p...q-1]$ and $A[q+1...r]$ such that each element in the first subarray is $\leq A[q]$ and each element in the second subarray is $\geq A[q]$
+
+**Conquer: ** Sort the two subarrays by recursive calls to `Quicksort`
+
+**Combine: ** No work is needed to combine the subarrays, because they are sorted in place.
+
+**Partitioning (divide step)**
+
+`Partition` always selects the last element $A[r]$ in the subarray $A[p...r]$ as the *pivot* - the element around which to partition
+
+```c
+Partition(A, p, r)
+    x = A[r]
+    i = p - 1
+    for j = p to r-1
+        if A[j] ≤ x
+            i = i + 1
+            exchange A[i] with A[j]
+    exchange A[i + 1] with A[r]
+    return i + 1
+```
+**Running time: **
+
+- for loop runs $\approx n:= r-p+1$ times
+- Each iteration takes time $\Theta(1)$
+- Total running time is $\Theta(n)$ for an array of length $n$
+- $\approx n$ comparisons made
+- Worst case : $\Theta(n^2)$!
+- Best case : $\Theta(n\log n)$
+
+### Randomized version of quicksort
+
+Randomly pick an element of the array that is being sorted as the pivot.
+
+```c
+Randomized-Partition(A, p, r)
+    i = Random(p, r)
+    exchange A[r] with A[i]
+    return Partition(A, p, r)
+```
+
+```c
+Randomized-Quicksort(A, p, r)
+    if p < r
+        q = Randomized-Partition(A, p, r)
+        Randomized-Quicksort(A, p, q - 1)
+        Randomized-Quicksort(A, q + 1, r)
+```
+**Running time: ** $O(n\log n)$ (expected time for any input)
+
+- In place !
+
 # Solving recurrences
 
 ## Substitution method
@@ -1589,5 +1650,106 @@ $$I\{A\} = \begin{cases}
 **Lemma : ** For an event $A$, let $X_A = I\{A\}$. Then $E[X_A]=Pr[A]$
 
 **Linearity of expectation : ** $E[aX + bY] = aE[X] + bE[Y]$
+
+## Hash functions and hash tables
+
+### Direct-Address tables
+
+- Simple technique that allows for simple implementation of constant-time insertion, deletion, and search
+- Every book has one unique number (ISBN)
+- Construct an array/table T with a position for each book
+
+![](direct_address_table.png){width=50% height=50%}
+\ 
+
+```c
+Direct-Address-Search(T, k)
+    return T[k]
+```
+
+```c
+Direct-Address-Insert(T, x)
+    T[x.key] = x
+```
+
+```c
+Direct-Address-Delete(T, x)
+    T[x.key] = NIL
+```
+
+**Running time: ** $O(1)$
+
+**Space: ** $O(|U|)$
+
+Positives | Negatives
+-------------------- | --------------------------------
+Running time of each operation : $O(1)$ | Space: $O(|U|)$
+Easy implementation | For most applications (like a library) we only store a small fraction of all possible items
+<span></span>                             | Wish to use space proportional to the amount of information stored
+
+
+## Hash tables
+
+- Uses space proportional to the number K of keys stored, i.e. $\Theta(K)$
+- Implement search, insertion, deletion in time $O(1)$ in the average case
+- In direct-address table an element with key *k* was stored in slot *k*, in hash tables it is stored in slot $h(k)$
+- $h: U\to \{0, 1, ..., m-1\}$ is called the hash function
+
+**Desired properties of a Hash Function**
+
+- Efficient computable
+- Distributes keys uniformly (to minimize collisions)
+- Deterministic: $h(k)$ is always equal to $h(k)$
+
+**Simple uniform hashing: ** $h$ hashes a new key equally likely to any of the $m$ slots independently of where any other has hashed to
+
+**Collisions**
+
+- When two items with keys $k_i$ and $k_j$ have $h(k_i)=h(k_j)$
+- How big table do we need to have so as to avoid collisions with high probability?
+
+Birthday Lemmy says that for $h$ to be injective with good probability then we need $m > K^2$
+
+```c
+Chained-Hash-Search(T, k)
+    search for an element with key k in list T[h(k)]
+```
+
+```c
+Chained-Hash-Insert(T, x)
+    insert x at the head of list T[h(x.key)]
+```
+
+```c
+Chained-Hash-Delete(T, x)
+    delete x from the list T[h(x.key)]
+```
+
+**Running time: **
+
+- $O(1)$ for insertion, deletion
+- $O(1)$ for deletion since
+    - list is double linked
+    - and we are given a pointer to element and not the key
+
+**Space: ** $O(m + K)$
+
+![](chained_hash_table.png)
+\ 
+
+**Running time of Search**
+
+- Worst case all *n* elements are hashed to the same slot
+    - Search takes $\Theta(n)$ time in worst case
+- Analyse average-case behavior
+    - We assume we use *simple uniform hashing*
+
+Let $n_j$ denote the length of the list $T[j]$. Note that $n = n_0 + n_1 + n_2 + ... + n_{m-1}$ and 
+
+$E[n_j] = Pr[h(k_1)=j] + Pr[h(k_2)=j] + ... + Pr[h(k_n)=j] = \alpha = n/m$
+
+**Theorem: ** An unsuccessful/successful search takes expected time $\Theta(1 + \alpha)$
+
+$\Rightarrow$ if we choose our hash table to be proportional to the number of elements stored $m = \Theta(n)$ then insertion, deletion $O(1)$ time and search expected $O(1)$ time.
 
 

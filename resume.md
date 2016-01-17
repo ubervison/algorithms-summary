@@ -398,10 +398,10 @@ $A = \begin{array}{|c|c|c|c|c|c|c|c|c|c|}
 \hline
 \end{array}$
 
-- $\text{Root}$ is `A[1]`
-- $\text{Left(i)}$ is `2i`
-- $\text{Right(i)}$ is `2i + 1`
-- $\text{Left(i)}$ is `⌊i/2⌋`
+- $\text{Root}$ is $A[1]$
+- $\text{Left(i)}$ is $\lfloor 2i\rfloor$
+- $\text{Right(i)}$ is $\lfloor 2i + 1\rfloor$
+- $\text{Parent(i)}$ is $\lfloor i/2\rfloor$
 
 ### Max-Heapify
 

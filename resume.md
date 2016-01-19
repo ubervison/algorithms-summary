@@ -1501,7 +1501,7 @@ DP programming to the rescue !
 
 **Optimal substructure : ** A binary search tree can be built by first picking the root and then building the subtrees recursively. After picking root solution to subtrees must be optimal.
 
-**Recursive formulation : ** Let $e[i, j] = $ expected search cost of optimal BST of $k_i...k_j$ : 
+**Recursive formulation : ** Let $e[i, j] =$ expected search cost of optimal BST of $k_i...k_j$ : 
 
 $e[i, j] = \begin{cases}
 0 & \text{if } i = j+1 \\
@@ -1682,13 +1682,13 @@ Direct-Address-Delete(T, x)
 **Space: ** $O(|U|)$
 
 Positives | Negatives
--------------------- | --------------------------------
+--- | ---
 Running time of each operation : $O(1)$ | Space: $O(|U|)$
-Easy implementation | For most applications (like a library) we only store a small fraction of all possible items
-<span></span>                             | Wish to use space proportional to the amount of information stored
+Easy implementation | For most applications we only store a small fraction of all possible items
+<span></span>       | Wish to use space proportional to the amount of information stored
 
 
-## Hash tables
+### Hash tables
 
 - Uses space proportional to the number K of keys stored, i.e. $\Theta(K)$
 - Implement search, insertion, deletion in time $O(1)$ in the average case
@@ -1708,7 +1708,7 @@ Easy implementation | For most applications (like a library) we only store a sma
 - When two items with keys $k_i$ and $k_j$ have $h(k_i)=h(k_j)$
 - How big table do we need to have so as to avoid collisions with high probability?
 
-Birthday Lemmy says that for $h$ to be injective with good probability then we need $m > K^2$
+Birthday Lemma says that for $h$ to be injective with good probability then we need $m > K^2$
 
 ```c
 Chained-Hash-Search(T, k)
@@ -1752,4 +1752,10 @@ $E[n_j] = Pr[h(k_1)=j] + Pr[h(k_2)=j] + ... + Pr[h(k_n)=j] = \alpha = n/m$
 
 $\Rightarrow$ if we choose our hash table to be proportional to the number of elements stored $m = \Theta(n)$ then insertion, deletion $O(1)$ time and search expected $O(1)$ time.
 
+### Number of collisions
 
+The expected number of collisions in any hashing scheme is given by:
+
+$$\mathbb{E}[X]=\mathbb{E}\left [\sum_{i=1}^{n-1} \sum_{j=i+1}^{n}X_{ij}\right ]=\sum_{i=1}^{n-1}\sum_{j=i+1}^n\mathbb{E}[X_{ij}]$$
+
+where $X_{ij}=Pr[h(k_i)=h(k_j)]$ and $i \not = j$

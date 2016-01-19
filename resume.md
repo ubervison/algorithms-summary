@@ -101,7 +101,7 @@ Topological-Sort(G)
 	1. Call DFS(G) to compute finishing time v.f for all v ∊ G.V
 	2. Output vertices in order of decreasing finishing times
 ```
-**Running time : ** $Theta(V + E)$ (same as DFS)
+**Running time : ** $\Theta(V + E)$ (same as DFS)
 
 ## Quick sort
 
@@ -1073,7 +1073,7 @@ SCC(G)
 
 **Output : ** a spanning tree of minimum total height
 
-![](MST.png){ width=50% height=50%}
+![](MST.png){ width=50% height=50% }
 
 #### Cuts
 

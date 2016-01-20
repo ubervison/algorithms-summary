@@ -1474,7 +1474,7 @@ Similarly, suppose that $Z_{k−1}$ is not a LCS of $X_{i−1}$ and $Y_{j−1}$ 
 
 ### Recursive formulation
 
-Define $c[i, j] = $ length of LCS of $X_i$ and $Y_j$. We want $c[m, n]$.
+Define $c[i, j] =$ length of LCS of $X_i$ and $Y_j$. We want $c[m, n]$.
 
 $c[i, j] = \begin{cases}
 0 & \text{if }i = 0 \text{ or } j = 0 \\

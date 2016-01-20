@@ -218,7 +218,7 @@ Then $T(n)$ has the following asymptotic bounds :
 
 **Conquer** by finding maximum subarrays of $A[low..mid]$ and $A[mid + 1...high]$.
 
-**Combine** by finding a maximum subarray that crosses the midpoint, and using the best solution out og the three.
+**Combine** by finding a maximum subarray that crosses the midpoint, and using the best solution out of the three.
 
 *Any subarray must either lie entirely on one side of the midpoint or cross the midpoint.*
 

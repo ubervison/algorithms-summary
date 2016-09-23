@@ -18,7 +18,7 @@ Algorithms
 
 ## Insertion sort
 
-Takes as parameter an array $A[1...n]$ and the length $n$ of the array. The algorithm iterates form the start of the array and compares each elements to the ones before it (like sorting a hand of playing cards).
+Takes as parameter an array $A[1...n]$ and the length $n$ of the array. The algorithm iterates from the start of the array and compares each elements to the ones before it (like sorting a hand of playing cards).
 
 ```c
 Insertion-Sort(A,n)
@@ -366,7 +366,7 @@ f(v, u) & \text{if } (v, u) \in E \\
 
 $G_f = (V, E_f)$ where $E_f = \{(u, v) \in V \times V: c_f(u, v) > 0\}$
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/residual_network.png)
+![](residual_network.png)
 \ 
 
 ### Running time
@@ -520,7 +520,7 @@ Max-Heap-Insert(A, key, n)
 
 Last-in, first-out.
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/stack.png)
+![](stack.png)
 
 - $\text{Push(S, x)}$: insert operation
 - $\text{Pop(S)}$: delete operation
@@ -575,7 +575,7 @@ First-in, first-out.
 - $\text{Enqueue(Q, x)}$: insert operation
 - $\text{Dequeue(Q)}$: delete operation
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/queue.png)
+![](queue.png)
 
 Implementation using arrays: $Q$ consists of elements $S[Q.head, ..., Q.tail-1]$
 
@@ -622,7 +622,7 @@ Search | Insertion | Deletion
 --- | --- | ---
 $O(n)$ | $O(1)$ | $O(1)$
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/linked_list.png)
+![](linked_list.png)
 
 ### Searching
 
@@ -887,7 +887,7 @@ A graph can be directed, undirected, vertex-weighted, edge-weighted, etc.
 - Vertex *u*'s list has all vertices *v* such that $(u, v)\in E$ (works for both directed and undirected graphs)
 - In pseudocode, *Adj* is denoted as $G.Adj$, so *u*'s list is denoted by $G.Adj[u]$
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/adj_list.png)
+![](adj_list.png)
 
 **Adjacency matrix**
 
@@ -898,7 +898,7 @@ $a_{ij} = \begin{cases}
 0 & \text{otherwise}
 \end{cases}$
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/adj_matrix.png)
+![](adj_matrix.png)
 
 <span></span> | Adjacency list | Adjacency matrix
 ----- | --- | ---
@@ -1004,7 +1004,7 @@ DFS forms a *depth-first forest* comprised of > 1 *depth-first trees*. Each tree
 *Forward edge:* $(u, v)$ where $v$ is a descendant of $u$, but not a tree edge
 *Cross edge:* any other edge
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/dfs_edges.png) 
+![](dfs_edges.png) 
 
 **Parenthesis theorem**
 
@@ -1035,7 +1035,7 @@ A directed graph $G$ is acyclic if and only if a DFS of $G$ yields no back edges
 
 **Definition : ** A strongly connected component (SCC) of a directed graph $G = (V, E)$ is a *maximal* set of vertices $C \subseteq V$ such that for all $u, v \in C$, both $u \rightsquigarrow v$ and $v \rightsquigarrow u$.
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/SCC.png)
+![](SCC.png)
 
 **Component graph**
 
@@ -1044,7 +1044,7 @@ For a digraph $G = (V, E)$, its component graph $G^{SCC} = (V^{SCC}, E^{SCC})$ i
 - $V^{SCC}$ has a vertex for each SCC in $G$
 - $E^{SCC}$ has an edge if there's an edge between the corresponding SCC's in $G$
 
-![](/home/ubervison/gdrive/EPFL/2015-2016/Semestre1/Algorithms/algorithms-summary/component_graph.png) 
+![](component_graph.png) 
 
 $G^{SCC}$ is a Directed Acyclic Graph (DAG).
 

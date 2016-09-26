@@ -1,7 +1,5 @@
 Algorithms
 
-[TOC]
-
 # Defintions
 
 **Algorithm : ** A tool for solving a well-specified computational problem, whose statement specifies in general terms the desired input/output relationship. The algorithm describes a specific computational procedure for achieving that input/output relationship.
@@ -575,7 +573,7 @@ First-in, first-out.
 - $\text{Enqueue(Q, x)}$: insert operation
 - $\text{Dequeue(Q)}$: delete operation
 
-![](queue.png)
+![](queue.png){width=50% height=50%}
 
 Implementation using arrays: $Q$ consists of elements $S[Q.head, ..., Q.tail-1]$
 
@@ -1035,7 +1033,7 @@ A directed graph $G$ is acyclic if and only if a DFS of $G$ yields no back edges
 
 **Definition : ** A strongly connected component (SCC) of a directed graph $G = (V, E)$ is a *maximal* set of vertices $C \subseteq V$ such that for all $u, v \in C$, both $u \rightsquigarrow v$ and $v \rightsquigarrow u$.
 
-![](SCC.png)
+![](SCC.png){width=50% height=50%}
 
 **Component graph**
 
@@ -1660,7 +1658,6 @@ $$I\{A\} = \begin{cases}
 - Construct an array/table T with a position for each book
 
 ![](direct_address_table.png){width=50% height=50%}
-\ 
 
 ```c
 Direct-Address-Search(T, k)
@@ -1682,8 +1679,8 @@ Direct-Address-Delete(T, x)
 **Space: ** $O(|U|)$
 
 Positives | Negatives
---- | ---
-Running time of each operation : $O(1)$ | Space: $O(|U|)$
+--------------------------------------------------------- | ------------------------------------------------------------------------------------------
+Running time of each operation : $O(1)$ | Space: $O(\lvert U \rvert)$
 Easy implementation | For most applications we only store a small fraction of all possible items
 <span></span>       | Wish to use space proportional to the amount of information stored
 
@@ -1734,7 +1731,7 @@ Chained-Hash-Delete(T, x)
 
 **Space: ** $O(m + K)$
 
-![](chained_hash_table.png)
+![](chained_hash_table.png){width=50% height=50%}
 \ 
 
 **Running time of Search**

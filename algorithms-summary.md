@@ -169,6 +169,8 @@ Randomized-Quicksort(A, p, r)
 - Guess the form of the solution
 - Use mathematical induction to find the constants and show that the solution works
 
+We can throw out the floors and ceilings.
+
 ## Recursion trees
 
 - Each node corresponds to the cost of a subproblem
@@ -477,7 +479,7 @@ Heap-Extract-Max(A, n)
 	Max-Heapify(A, 1, n)
 	return max
 ```
-**Runnin time : ** $O(\log n)$ (same as Max-Heapify + constant time assignments)
+**Running time : ** $O(\log n)$ (same as Max-Heapify + constant time assignments)
 
 ### Heap-Increase-Key
 
@@ -498,7 +500,7 @@ Heap-Increase-Key(A, i, key)
 ```
 **Running time : ** $O(\log n)$
 
-### Max-Heap-Increase
+### Max-Heap-Insert
 
 Given a new $key$ to insert into heap :
 

@@ -1491,7 +1491,7 @@ c[i-1, j-1] + 1 & \text{if } i, j > 0 \text{ and } x_i = y_j \\
 - Want BST with minimum expected search cost
 - Actual cost = # of items examined
 
-For key $k_i, \text{cost} = \text{depth}_T(k_i) + 1$, where  $ \text{depth}_T(k_i) $ denotes the depth of $k_i$ in BST $T$
+For key $k_i, \text{cost} = \text{depth}_T(k_i) + 1$, where  $\text{depth}_T(k_i)$ denotes the depth of $k_i$ in BST $T$
 
 $$\mathbb{E}(\text{search cost in T}) = \sum_{i=1}^n( \text{depth}_T(k_i) + 1)p_i = 1 + \sum_{i=1}^n \text{depth}_T(k_i)p_i $$
 

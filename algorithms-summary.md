@@ -70,7 +70,7 @@ Merge(A, p, q, r)
 			j = j + 1
 ```
 
-**Complexity : ** $O(n\log n)$ (best and worst case)
+**Complexity : ** $O(n\log n)$ (best and worst case), $O(n)$ extra space
 
 ## Heapsort
 

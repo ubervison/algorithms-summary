@@ -738,6 +738,7 @@ Tree-Maximum(x)
 The successor of a node *x* is the node *y* with the smallest key such that *y.key > x.key*. In other words, it is the leftmost node in the right subtree of *x* (if the right subtree is nonempty).
 
 **Case 1 : ** *x* has a non-empty right subtree $\Longrightarrow$*x*'s successor is the minimum in the right subtree
+
 **Case 2 : ** *x* has an empty right subtree $\Longrightarrow$ as long as we're going up to the left we're visiting smaller keys. *x*'s successor *y* is the node that *x* is the predecessor of (*x* is the maximum in *y*'s left subtree).
 
 ```c

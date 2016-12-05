@@ -1555,7 +1555,7 @@ Relax(u, v, w)
 
 ![](relax.png){width=50% height=50%}
 
-Bellman-Ford updates shortesr path estimates iteratively by using `Relax`.
+Bellman-Ford updates shortest path estimates iteratively by using `Relax`.
 
 ```c
 Bellman-Ford(G, w, s)

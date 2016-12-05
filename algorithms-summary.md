@@ -1561,7 +1561,7 @@ Bellman-Ford updates shortest path estimates iteratively by using `Relax`.
 Bellman-Ford(G, w, s)
     Init-Single-Source(G, s)
     for i = 1 to |G.V| - 1
-        for each esge (u, v) in G.E
+        for each edge (u, v) in G.E
             Relax(u, v, w)
 ```
 **Running time : ** $\Theta(E\cdot V)$

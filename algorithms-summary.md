@@ -1591,9 +1591,10 @@ Bellman-Ford(G, w, s)
 ## Dijkstra's algorithm
 
 Only works when all weights are positive
-- Greedy and faster than Bellman-For
+
+- Greedy and faster than Bellman-Ford
 - Similar idea to Prim's algorithm (essentially weighted version of BFS)
--
+
 Start with source $S = \{s\}$
 
 **Greedily grow $S$ : ** at each step add to S the vertex that is closest to $S$ (minimum $v\in S : u.d + w(u, v))$

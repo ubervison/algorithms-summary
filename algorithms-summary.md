@@ -12,6 +12,12 @@ Algorithms
 - **Maintenance : ** If the loop invariant is true before an iteration of the loop, it remains true before the next iteration.
 - **Termination : ** When the loop terminates, the invariant, - usually along with the reason that the loop terminated - gives us a useful property that helps show that the alorithm is correct.
 
+## Stirling's Formula
+
+$$\lim_{n\to + \infty} \frac{n!}{\sqrt{2\pi n (n/e)^n}} = 1$$
+
+$$n! \approx \sqrt{2\pi n}\left ( \frac{n}{e}\right )^n$$
+
 # Sorting Algorithms
 
 ## Insertion sort
